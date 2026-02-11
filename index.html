@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="card-content flex flex-col justify-center h-full">
-                        <h1 class="mb-4">ABHAY K V</h1>
+                        <h1 class="mb-4 glitch-text" data-text="ABHAY K V">ABHAY K V</h1>
                         <h2
                             class="text-xl md:text-3xl font-bold bg-black text-white inline-block p-2 transform -rotate-1 md:w-max max-w-[90vw] break-words">
                             FULL STACK FLUTTER ENGINEER</h2>
@@ -94,7 +94,7 @@
 
             <h2 class="mb-8 bg-white text-black border-2 border-black p-2 shadow-[4px_4px_0_0_#000]">EXPERIENCE_LOG</h2>
 
-            <div class="bento-grid">
+            <div class="bento-grid timeline-container">
 
                 <!-- Job 1 -->
                 <div class="col-span-12 md:col-span-6 brutalist-card" style="color: #000; background: #fff;">
@@ -215,8 +215,9 @@
             <div class="bento-grid">
 
                 <!-- Scaledrone -->
-                <div class="col-span-12 md:col-span-6 brutalist-card"
+                <div class="col-span-12 md:col-span-6 brutalist-card relative"
                     style="background: var(--accent-orange); transform: rotate(-1deg); color: #000;">
+                    <div class="tape"></div>
                     <div class="card-header" style="background: white;">
                         <span class="font-bold mono">PKG: SCALEDRONE_DART</span>
                     </div>
@@ -246,8 +247,9 @@
                 </div>
 
                 <!-- Glowing Avatar -->
-                <div class="col-span-12 md:col-span-6 brutalist-card"
+                <div class="col-span-12 md:col-span-6 brutalist-card relative"
                     style="background: #fff; transform: rotate(1deg); color: #000;">
+                    <div class="tape"></div>
                     <div class="card-header" style="background: var(--accent-blue); color: #000;">
                         <span class="font-bold mono">PKG: GLOWING_AVATAR</span>
                     </div>
@@ -334,7 +336,7 @@
         </section>
 
         <!-- SYSTEMS LAB (New) -->
-        <section id="systems-lab" style="background: #000; color: #fff;">
+        <section id="systems-lab" class="scanlines" style="background: #000; color: #fff;">
             <div class="sticker" style="bottom:10%; right:10%; font-size:3rem; color:var(--accent-green);"><i
                     class="fas fa-terminal"></i></div>
 
