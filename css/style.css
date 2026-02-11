@@ -96,6 +96,35 @@ section {
     border-bottom: var(--border-width) solid var(--border-color);
 }
 
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    section {
+        padding: 6rem 1rem 2rem 1rem;
+        justify-content: flex-start;
+        /* Fix: Heading was getting pushed up off-screen */
+        height: auto;
+        /* Allow section to grow */
+        min-height: 100vh;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        /* Ensure gap between header and grid */
+    }
+
+    .sticker {
+        opacity: 0.2;
+        transform: scale(0.6);
+        z-index: 0;
+        /* Move behind content */
+    }
+}
+
 /* --- COMPONENTS --- */
 
 /* Brutalist Card */
@@ -180,35 +209,6 @@ h2 {
     max-width: 1200px;
 }
 
-.col-span-12 {
-    grid-column: span 12;
-}
-
-.col-span-8 {
-    grid-column: span 12;
-}
-
-.col-span-6 {
-    grid-column: span 12;
-}
-
-.col-span-4 {
-    grid-column: span 12;
-}
-
-@media (min-width: 768px) {
-    .col-span-8 {
-        grid-column: span 8;
-    }
-
-    .col-span-6 {
-        grid-column: span 6;
-    }
-
-    .col-span-4 {
-        grid-column: span 4;
-    }
-}
 
 /* Terminal Component */
 .terminal-window {
@@ -301,7 +301,8 @@ h2 {
 .marquee-container {
     width: 100%;
     background: var(--accent-purple);
-    border-y: var(--border-width) solid var(--border-color);
+    border-top: var(--border-width) solid var(--border-color);
+    border-bottom: var(--border-width) solid var(--border-color);
     overflow: hidden;
     white-space: nowrap;
     position: absolute;
