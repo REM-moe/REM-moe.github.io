@@ -4,255 +4,492 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhay K V</title>
-
-    <!-- Tailwind CSS -->
+    <title>Abhay K V | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-            overflow: hidden;
-            background-color: #050505;
-            color: #ffffff;
-        }
-
-        #canvas-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            opacity: 0.8;
-            pointer-events: none;
-        }
-
-        /* Minimal scrollbar */
-        ::-webkit-scrollbar {
-            width: 4px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 0px;
-        }
-
-        /* Gradient mask - Reduced opacity to ensure 3D is visible */
-        .content-mask {
-            background: linear-gradient(90deg, #050505 0%, rgba(5, 5, 5, 0.9) 30%, rgba(5, 5, 5, 0.1) 100%);
-        }
-
-        .minimal-link {
-            position: relative;
-            text-decoration: none;
-            padding-bottom: 2px;
-        }
-
-        .minimal-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: 0;
-            left: 0;
-            background-color: #ffffff;
-            transition: width 0.3s ease;
-        }
-
-        .minimal-link:hover::after {
-            width: 100%;
-        }
-
-        /* Custom selection color */
-        ::selection {
-            background: #ffffff;
-            color: #000000;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="antialiased">
+<body class="antialiased" data-theme="light">
 
-    <!-- 3D Background -->
-    <div id="canvas-container"></div>
+    <button id="theme-toggle"><i class="fas fa-sun"></i></button>
 
-    <!-- Gradient Overlay for Readability -->
-    <div class="fixed inset-0 pointer-events-none z-0 content-mask"></div>
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero">
+            <div class="sticker" style="top:10%; right:10%; font-size:4rem; color:var(--accent-red);"><i
+                    class="fas fa-asterisk"></i></div>
 
-    <!-- Main Content -->
-    <main
-        class="relative z-10 w-full h-screen flex flex-col md:flex-row items-center justify-between px-8 md:px-20 lg:px-32">
+            <div class="bento-grid">
 
-        <!-- Left Section: Identity -->
-        <section class="w-full md:w-1/2 flex flex-col items-start justify-center h-full space-y-8 pointer-events-auto">
-            <div>
-                <h1 class="text-6xl md:text-8xl font-bold tracking-tighter leading-none text-white mb-2">
-                    ABHAY K V
-                </h1>
-                <p class="text-xl md:text-2xl font-light text-gray-400 tracking-wide">
-                    Engineer
-                </p>
-                <div class="h-1 w-20 bg-white mt-6 mb-6"></div>
-                <p class="text-sm text-gray-500 uppercase tracking-[0.2em]">
-                    I build ideas
-                </p>
+                <!-- Main Intro Card -->
+                <div class="col-span-8 brutalist-card" style="background: var(--accent-yellow);">
+                    <div class="card-header" style="background: white;">
+                        <span class="font-bold mono uppercase">USER: ABHAY_KV</span>
+                        <div class="window-actions">
+                            <div class="win-btn min"></div>
+                            <div class="win-btn close"></div>
+                        </div>
+                    </div>
+                    <div class="card-content flex flex-col justify-center h-full">
+                        <h1 class="mb-4">ABHAY K V</h1>
+                        <h2
+                            class="text-xl md:text-3xl font-bold bg-black text-white inline-block p-2 transform -rotate-1 w-max">
+                            FULL STACK FLUTTER ENGINEER</h2>
+                    </div>
+                </div>
+
+                <!-- Stats / Info Card -->
+                <div class="col-span-4 brutalist-card" style="background: var(--accent-blue);">
+                    <div class="card-header" style="background: white;">
+                        <span class="font-bold mono">STATUS_CHECK</span>
+                    </div>
+                    <div class="card-content font-bold mono text-sm">
+                        <div class="flex justify-between border-b-2 border-black mb-2"><span>LOC:</span>
+                            <span>INDIA</span>
+                        </div>
+                        <div class="flex justify-between border-b-2 border-black mb-2"><span>EXP:</span> <span>2
+                                YEARS</span></div>
+                        <div class="flex justify-between border-b-2 border-black mb-2"><span>STACK:</span>
+                            <span>FLUTTER, IOT</span>
+                        </div>
+                        <div class="flex justify-between mb-2"><span>AVAIL:</span> <span
+                                class="bg-green-400 px-1 border border-black">OPEN</span></div>
+                    </div>
+                </div>
+
+                <!-- Terminal Bio -->
+                <div class="col-span-12 terminal-window">
+                    <div class="terminal-line">init_portfolio.sh</div>
+                    <div class="terminal-line">loading_modules... [OK]</div>
+                    <div class="terminal-line text-white mt-2">
+                        Summary: Full Stack Flutter Engineer integrating <span class="text-yellow-400">IoT, AI, and
+                            Real-time systems</span>.
+                        Led migration of 9 legacy apps serving 2000+ users.
+                        Specialized in ESP32 embedded systems & enterprise architecture.
+                    </div>
+                    <div class="terminal-line mt-2 text-blue-400">git commit -m "Delivering quality solutions with grit"
+                    </div>
+                </div>
             </div>
 
-            <!-- Social Links -->
-            <div class="flex gap-8 pt-4">
-                <a href="https://linkedin.com/in/abhay-k-v/" target="_blank"
-                    class="minimal-link text-gray-300 hover:text-white transition-colors uppercase text-sm tracking-widest">
-                    LinkedIn
-                </a>
-                <a href="https://github.com/REM-moe" target="_blank"
-                    class="minimal-link text-gray-300 hover:text-white transition-colors uppercase text-sm tracking-widest">
-                    GitHub
-                </a>
-                <a href="mailto:abhaykv111@gmail.com"
-                    class="minimal-link text-gray-300 hover:text-white transition-colors uppercase text-sm tracking-widest">
-                    Email
-                </a>
+            <!-- Marquee -->
+            <div class="marquee-container" style="bottom: 5%;">
+                <div class="marquee-content">
+                    FLUTTER • GETX • BLOC • SUPABASE • POSTGRESQL • PYTHON • ESP32 • ARDUINO • CI/CD • SHOREBIRD •
+                    MIXPANEL • SENTRY •
+                    FLUTTER • GETX • BLOC • SUPABASE • POSTGRESQL • PYTHON • ESP32 • ARDUINO • CI/CD • SHOREBIRD •
+                    MIXPANEL • SENTRY
+                </div>
             </div>
         </section>
 
-        <!-- Right Section: Tools List -->
-        <section class="w-full md:w-1/3 flex flex-col justify-center h-full pt-10 md:pt-0 pointer-events-auto">
-            <div class="flex flex-col space-y-12 text-right">
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience" style="background: var(--accent-blue);">
+            <div class="sticker"
+                style="bottom:15%; left:5%; font-size:5rem; color:var(--accent-yellow); transform: rotate(15deg);"><i
+                    class="fas fa-folder-open"></i></div>
 
-                <!-- Group 1 -->
-                <div>
-                    <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Core Stack</h3>
-                    <ul class="space-y-2 text-lg md:text-xl font-light text-gray-300">
-                        <li>Flutter / Dart</li>
-                        <li>GetX / BLoC</li>
-                        <li>Supabase</li>
-                        <li>PostgreSQL</li>
-                        <li>Python</li>
-                    </ul>
+            <h2 class="mb-8 bg-white border-2 border-black p-2 shadow-[4px_4px_0_0_#000]">EXPERIENCE_LOG</h2>
+
+            <div class="bento-grid">
+
+                <!-- Job 1 -->
+                <div class="col-span-12 md:col-span-6 brutalist-card">
+                    <div class="card-header" style="background: var(--accent-red);">
+                        <span class="font-bold text-white">CENTRIM LIFE (ECARET)</span>
+                        <div class="window-actions">
+                            <div class="win-btn"></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="flex justify-between items-baseline mb-4 border-b-2 border-black pb-2">
+                            <h3 class="font-bold text-lg">MIGRATION LEAD</h3>
+                            <span class="mono text-xs font-bold">MAY 2025 - PRESENT</span>
+                        </div>
+                        <ul class="brutalist-list font-medium text-sm">
+                            <li>Spearheaded migration of 9 legacy Ionic apps to 2 unified Flutter apps
+                                (Tablet/Kiosk/Mobile).</li>
+                            <li>Supported <span class="highlight">12,000+ users</span> across UK/Australia aged care.
+                            </li>
+                            <li>Reduced maintenance overhead by <span class="highlight">78%</span> & costs by 40%.</li>
+                            <li>Architected monorepo with BLoC, Figma tokens, white-labeling.</li>
+                        </ul>
+                        <div class="tag-cloud mt-4">
+                            <span class="tag">BLoC</span><span class="tag">Monorepo</span><span class="tag">CI/CD</span>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Group 3 -->
-                <div>
-                    <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">TOOLS</h3>
-                    <ul class="space-y-2 text-lg md:text-xl font-light text-gray-300">
-                        <li>SENTRY</li>
-                        <li>MIXPANEL</li>
-                        <li>CI/CD - codemagic</li>
-                    </ul>
+                <!-- Job 2 -->
+                <div class="col-span-12 md:col-span-6 brutalist-card">
+                    <div class="card-header" style="background: var(--accent-orange);">
+                        <span class="font-bold text-black">DESIGN WITH PANDA</span>
+                        <div class="window-actions">
+                            <div class="win-btn"></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="flex justify-between items-baseline mb-4 border-b-2 border-black pb-2">
+                            <h3 class="font-bold text-lg">FLUTTER DEV</h3>
+                            <span class="mono text-xs font-bold">NOV 2024 - MAY 2025</span>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="font-bold text-xs uppercase underline">Trinity Employment:</h4>
+                            <p class="text-sm">Scalable job marketplace (400+ users). GetX, Supabase, RLS. Accelerated
+                                hiring by 60%.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xs uppercase underline">iFastSocial Ecosystem:</h4>
+                            <p class="text-sm">Insurance training LMS + Marketing dashboard for Florida agents.</p>
+                        </div>
+                        <div class="tag-cloud mt-4">
+                            <span class="tag">GetX</span><span class="tag">Supabase</span><span class="tag">LMS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 3 (Internship) -->
+                <div class="col-span-12 brutalist-card" style="background: #eee;">
+                    <div class="card-content flex flex-col md:flex-row justify-between items-center py-4">
+                        <div class="text-center md:text-left">
+                            <h3 class="font-bold">TRENDING ISLAND</h3>
+                            <span class="text-xs uppercase mono text-gray-600">Growth Manager & App Dev (Intern) | Jan -
+                                Sep 2024</span>
+                        </div>
+                        <p class="text-sm mt-2 md:mt-0 font-medium">FlutterFlow prototyping, user research, market
+                            validation.</p>
+                    </div>
+                </div>
+
+                <!-- SEPARATOR -->
+                <div class="col-span-12 my-4">
+                    <h3 class="font-black text-xl bg-white border-2 border-black inline-block p-1">VOLUNTEERING &
+                        LEADERSHIP</h3>
+                </div>
+
+                <!-- KYLA -->
+                <div class="col-span-12 md:col-span-6 brutalist-card" style="background: var(--accent-yellow);">
+                    <div class="card-header" style="background: #000; color: #fff;">
+                        <span class="font-bold mono">VOLUNTEER: KYLA</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="text-xl font-black">THRIVE VOLUNTEER</h3>
+                        <p class="text-xs font-bold mb-2">KERALA YOUTH LEADERSHIP ACADEMY</p>
+                        <p class="text-sm mb-2 font-mono">MAR 2023 - MAY 2025</p>
+                        <p class="text-sm">Tribal education initiatives & team leadership. Empowering youth through
+                            holistic development programs.</p>
+                    </div>
+                </div>
+
+                <!-- IEEE -->
+                <div class="col-span-12 md:col-span-6 brutalist-card" style="background: var(--accent-blue);">
+                    <div class="card-header" style="background: #000; color: #fff;">
+                        <span class="font-bold mono">MEMBER: IEEE</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="text-xl font-black">STUDENT MEMBER</h3>
+                        <p class="text-xs font-bold mb-2">COMPUTER SOCIETY • PES • IAS</p>
+                        <p class="text-sm mb-2 font-mono">FEB 2022 - FEB 2024</p>
+                        <p class="text-sm">Active participant in technical workshops and student branch coordination.
+                        </p>
+                    </div>
                 </div>
 
             </div>
         </section>
+
+        <!-- PACKAGES SECTION -->
+        <section id="packages" style="background: var(--accent-purple);">
+            <div class="sticker"
+                style="top:5%; right:5%; font-size:4rem; color:var(--accent-green); transform: rotate(20deg);"><i
+                    class="fas fa-box-open"></i></div>
+
+            <h2 class="mb-8 bg-white border-2 border-black p-2 shadow-[4px_4px_0_0_#000]">DEPLOYMENT_HUB</h2>
+
+            <div class="bento-grid">
+
+                <!-- Scaledrone -->
+                <div class="col-span-12 md:col-span-6 brutalist-card"
+                    style="background: var(--accent-orange); transform: rotate(-1deg);">
+                    <div class="card-header" style="background: white;">
+                        <span class="font-bold mono">PKG: SCALEDRONE_DART</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-black">SCALEDRONE</h3>
+                            <span class="bg-black text-white px-2 py-1 font-bold text-xs">V0.2.3</span>
+                        </div>
+                        <p class="text-sm font-medium mb-4 text-justify">
+                            Robust, strictly-typed Dart & Flutter client for Scaledrone Real-time Messaging API (V3).
+                        </p>
+                        <div class="grid grid-cols-2 gap-2 mb-4">
+                            <div class="bg-white border-2 border-black p-1 text-center"><span
+                                    class="block font-black text-xl">338</span><span
+                                    class="text-[10px] uppercase font-bold">Downloads</span></div>
+                            <div class="bg-white border-2 border-black p-1 text-center"><span
+                                    class="block font-black text-xl">160</span><span
+                                    class="text-[10px] uppercase font-bold">Points</span></div>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://pub.dev/packages/scaledrone_dart" target="_blank"
+                                class="brutalist-btn bg-white text-xs w-full text-center">Pub.dev</a>
+                            <a href="https://github.com/REM-moe/scaledrone_dart" target="_blank"
+                                class="brutalist-btn bg-black text-white text-xs w-full text-center">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Glowing Avatar -->
+                <div class="col-span-12 md:col-span-6 brutalist-card"
+                    style="background: #fff; transform: rotate(1deg);">
+                    <div class="card-header" style="background: var(--accent-blue);">
+                        <span class="font-bold mono">PKG: GLOWING_AVATAR</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-black">GLOWING_AVATAR</h3>
+                            <span class="bg-black text-white px-2 py-1 font-bold text-xs">V1.0.1</span>
+                        </div>
+                        <p class="text-sm font-medium mb-4 text-justify">
+                            Flutter package for beautiful glowing avatar widgets with customizable effects.
+                        </p>
+                        <div class="grid grid-cols-2 gap-2 mb-4">
+                            <div class="bg-white border-2 border-black p-1 text-center"><span
+                                    class="block font-black text-xl">7</span><span
+                                    class="text-[10px] uppercase font-bold">Likes</span></div>
+                            <div class="bg-white border-2 border-black p-1 text-center"><span
+                                    class="block font-black text-xl">160</span><span
+                                    class="text-[10px] uppercase font-bold">Points</span></div>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://pub.dev/packages/glowing_avatar" target="_blank"
+                                class="brutalist-btn bg-white text-xs w-full text-center">Pub.dev</a>
+                            <a href="https://github.com/REM-moe/glowing_avatar" target="_blank"
+                                class="brutalist-btn bg-black text-white text-xs w-full text-center">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEPARATOR -->
+                <div class="col-span-12 my-4">
+                    <h3 class="font-black text-xl bg-white border-2 border-black inline-block p-1">APP_DEPLOYMENTS</h3>
+                </div>
+
+                <!-- WATR -->
+                <div class="col-span-12 md:col-span-4 brutalist-card" style="background: var(--accent-yellow);">
+                    <div class="card-header" style="background: #000; color: #fff;">
+                        <span class="font-bold mono">IOT: WATR</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="text-xl font-black mb-2">WATR_SYSTEM</h3>
+                        <p class="text-xs font-bold mb-2">SMART HYDRATION</p>
+                        <p class="text-sm mb-4">ESP32 + Flutter. Custom C++ algorithms. <span
+                                class="bg-white px-1 border border-black">
+                                < 500ms</span> latency.</p>
+                        <div class="tag-cloud"><span class="tag">FLUTTER</span><span class="tag">IOT</span></div>
+                    </div>
+                </div>
+
+                <!-- NUTRISCAN -->
+                <div class="col-span-12 md:col-span-4 brutalist-card" style="background: var(--accent-green);">
+                    <div class="card-header" style="background: #000; color: #fff;">
+                        <span class="font-bold mono">AI: NUTRISCAN</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="text-xl font-black mb-2">NUTRISCAN</h3>
+                        <p class="text-xs font-bold mb-2">DIET SAFETY AI</p>
+                        <p class="text-sm mb-4">OCR pipeline with Gemini API. <span
+                                class="bg-white px-1 border border-black">95%</span> Accuracy.</p>
+                        <div class="tag-cloud"><span class="tag">AI</span><span class="tag">PYTHON</span></div>
+                    </div>
+                </div>
+
+                <!-- LUNATRACK -->
+                <div class="col-span-12 md:col-span-4 brutalist-card" style="background: #fff;">
+                    <div class="card-header" style="background: var(--accent-blue);">
+                        <span class="font-bold mono">APP: LUNATRACK</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-black">LUNATRACK</h3>
+                            <a href="https://github.com/REM-moe/LunaTrack" target="_blank"><i
+                                    class="fab fa-github text-xl"></i></a>
+                        </div>
+                        <p class="text-xs font-bold mb-2">CYCLE TRACKER</p>
+                        <p class="text-sm mb-4">First Flutter app. Custom calendar logic & local storage.</p>
+                        <div class="tag-cloud"><span class="tag">FLUTTER</span><span class="tag">DART</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SYSTEMS LAB (New) -->
+        <section id="systems-lab" style="background: #000; color: #fff;">
+            <div class="sticker" style="bottom:10%; right:10%; font-size:3rem; color:var(--accent-green);"><i
+                    class="fas fa-terminal"></i></div>
+
+            <h2 class="mb-8 bg-white text-black border-2 border-yellow-400 p-2 shadow-[4px_4px_0_0_#fff]">SYSTEMS_LAB
+            </h2>
+
+            <div class="bento-grid">
+
+                <!-- go_LUT -->
+                <div class="col-span-12 md:col-span-4 brutalist-card"
+                    style="background: #1a1a1a; border-color: #fff; color: #fff;">
+                    <div class="card-header" style="background: var(--accent-yellow); color: #000;">
+                        <span class="font-bold mono">CLI: GO_LUT</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-lg font-black text-green-400">./go_lut</h3>
+                            <a href="https://github.com/REM-moe/go_LUT" target="_blank"
+                                class="text-white hover:text-green-400"><i class="fab fa-github"></i></a>
+                        </div>
+                        <p class="text-sm font-mono text-gray-300 mb-4">> Applies .cube LUTs to images. High-perf image
+                            processing.</p>
+                        <div class="tag-cloud"><span class="tag bg-gray-700 text-white border-white">GO</span></div>
+                    </div>
+                </div>
+
+                <!-- zig-viz -->
+                <div class="col-span-12 md:col-span-4 brutalist-card"
+                    style="background: #1a1a1a; border-color: #fff; color: #fff;">
+                    <div class="card-header" style="background: var(--accent-purple); color: #fff;">
+                        <span class="font-bold mono">EXP: ZIG-VIZ</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-lg font-black text-purple-400">./zig_viz</h3>
+                            <a href="https://github.com/REM-moe/zig-viz" target="_blank"
+                                class="text-white hover:text-purple-400"><i class="fab fa-github"></i></a>
+                        </div>
+                        <p class="text-sm font-mono text-gray-300 mb-4">> Audio visualizer in Zig. Low-level memory
+                            management exp.</p>
+                        <div class="tag-cloud"><span class="tag bg-gray-700 text-white border-white">ZIG</span></div>
+                    </div>
+                </div>
+
+                <!-- go_port_scan -->
+                <div class="col-span-12 md:col-span-4 brutalist-card"
+                    style="background: #1a1a1a; border-color: #fff; color: #fff;">
+                    <div class="card-header" style="background: var(--accent-red); color: #fff;">
+                        <span class="font-bold mono">NET: PORT_SCAN</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-lg font-black text-red-400">./scan_ports</h3>
+                            <a href="https://github.com/REM-moe/go_port_scan" target="_blank"
+                                class="text-white hover:text-red-400"><i class="fab fa-github"></i></a>
+                        </div>
+                        <p class="text-sm font-mono text-gray-300 mb-4">> Concurrency-focused port scanner.
+                            Multi-threaded network analysis.</p>
+                        <div class="tag-cloud"><span class="tag bg-gray-700 text-white border-white">GO</span></div>
+                    </div>
+                </div>
+
+                <!-- LINKEDIN LOGS (New) -->
+                <div class="col-span-12 brutalist-card" style="background: #000; border: 2px solid #0f0;">
+                    <div class="card-header" style="background: #0f0; color: #000;">
+                        <span class="font-bold mono">NETWORK_TRAFFIC // LINKEDIN_LOGS</span>
+                    </div>
+                    <div class="card-content font-mono text-xs md:text-sm text-green-400">
+                        <div class="mb-2 border-b border-green-900 pb-1">
+                            <span class="text-gray-500">[LOG_01]</span> >> <a
+                                href="https://www.linkedin.com/posts/abhay-k-v_jiohotstar-ux-ui-activity-7425042353629061120-0RUb"
+                                target="_blank" class="hover:bg-green-900 hover:text-white transition-colors">JioHotstar
+                                UX/UI Critique & Redesign Analysis</a>
+                        </div>
+                        <div class="mb-2 border-b border-green-900 pb-1">
+                            <span class="text-gray-500">[LOG_02]</span> >> <a
+                                href="https://www.linkedin.com/posts/abhay-k-v_ziglang-zig-activity-7424131781819330560-P_CT"
+                                target="_blank" class="hover:bg-green-900 hover:text-white transition-colors">Learning
+                                Zig: Memory Safety & Low-level Fun</a>
+                        </div>
+                        <div class="mb-2 border-b border-green-900 pb-1">
+                            <span class="text-gray-500">[LOG_03]</span> >> <a
+                                href="https://www.linkedin.com/posts/abhay-k-v_flutter-con-india-activity-7407453369893761024-1a4x"
+                                target="_blank" class="hover:bg-green-900 hover:text-white transition-colors">FlutterCon
+                                India Experience & Key Takeaways</a>
+                        </div>
+                        <div class="mb-2 border-b border-green-900 pb-1">
+                            <span class="text-gray-500">[LOG_04]</span> >> <a
+                                href="https://www.linkedin.com/posts/abhay-k-v_flutter-esp32-supabase-activity-7315061496886054915-7BZq"
+                                target="_blank" class="hover:bg-green-900 hover:text-white transition-colors">IoT
+                                Integration: Flutter x ESP32 x Supabase</a>
+                        </div>
+                        <div class="mb-1">
+                            <span class="text-gray-500">[LOG_05]</span> >> <a
+                                href="https://www.linkedin.com/posts/abhay-k-v_kannur-aspirations-holistic-activity-7174028534158442496-ce_L"
+                                target="_blank" class="hover:bg-green-900 hover:text-white transition-colors">Holistic
+                                Development at Kannur Aspirations</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!-- EDUCATION & CONTACT -->
+        <section id="education" style="background: #eee;">
+            <div class="bento-grid">
+
+                <!-- Education -->
+                <div class="col-span-12 md:col-span-6 brutalist-card">
+                    <div class="card-header bg-gray-200">
+                        <span class="font-bold">EDUCATION_DB</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="font-bold text-lg">B.TECH COMPUTER SCIENCE</h3>
+                        <p class="text-xs font-bold uppercase text-gray-500 mb-2">Nov 2021 - Jun 2025 | KTU University
+                        </p>
+                        <ul class="brutalist-list text-sm">
+                            <li>CGPA: 7.33</li>
+                            <li>Vimal Jyothi Engineering College</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Certs -->
+                <div class="col-span-12 md:col-span-6 brutalist-card">
+                    <div class="card-header bg-gray-200">
+                        <span class="font-bold">CERTIFICATES</span>
+                    </div>
+                    <div class="card-content">
+                        <ul class="brutalist-list text-sm">
+                            <li class="mb-2"><strong>Supervised Machine Learning</strong><br><span
+                                    class="text-xs text-gray-500">Stanford / DeepLearning.AI</span></li>
+                            <li><strong>Intro to Python</strong><br><span class="text-xs text-gray-500">Univ. of
+                                    Pennsylvania</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact Footer -->
+                <div class="col-span-12 brutalist-card text-center py-8" style="background: #000; color: white;">
+                    <h2 class="text-white text-4xl mb-4">READY TO DEPLOY?</h2>
+                    <a href="mailto:abhaykv111@gmail.com" class="brutalist-btn"
+                        style="background: var(--accent-yellow);">INITIATE CONTACT</a>
+                    <div class="flex justify-center gap-6 text-3xl mt-6">
+                        <a href="https://linkedin.com/in/abhay-k-v/" class="hover:text-yellow-400"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/REM-moe" class="hover:text-yellow-400"><i
+                                class="fab fa-github"></i></a>
+                        <a href="assets/ABHAY_RESUME_JAN_2026.pdf" class="hover:text-yellow-400"><i
+                                class="fas fa-file-pdf"></i></a>
+                    </div>
+                    <p class="mono text-xs text-gray-500 mt-6">SYSTEM VERSION 2.0.26 • ABHAY K V</p>
+                </div>
+
+            </div>
+        </section>
+
     </main>
 
-    <!-- Three.js CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-    <script>
-        // --- THREE.JS AIZAWA ATTRACTOR SETUP ---
-        const container = document.getElementById('canvas-container');
-
-        const scene = new THREE.Scene();
-
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        // Moved camera closer and centered it better
-        camera.position.z = 45;
-        camera.position.y = 0;
-        camera.position.x = 0;
-
-        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(window.devicePixelRatio);
-        container.appendChild(renderer.domElement);
-
-        // Aizawa Attractor Variables
-        const a = 0.95, b = 0.7, c = 0.6, d = 3.5, e = 0.25, f = 0.1;
-        let x = 0.1, y = 0, z = 0;
-        const dt = 0.01;
-        const numPoints = 30000;
-        const scale = 12.0; // SCALE FACTOR: Makes the shape much bigger
-
-        const geometry = new THREE.BufferGeometry();
-        const positions = new Float32Array(numPoints * 3);
-        const colors = new Float32Array(numPoints * 3);
-
-        // Generate Points
-        for (let i = 0; i < numPoints; i++) {
-            const dx = (z - b) * x - d * y;
-            const dy = d * x + (z - b) * y;
-            const dz = c + a * z - (z * z * z) / 3 - (x * x + y * y) * (1 + e * z) + f * z * x * x * x;
-
-            x += dx * dt;
-            y += dy * dt;
-            z += dz * dt;
-
-            // Apply scale and center offset (approximate visual centering)
-            positions[i * 3] = x * scale;
-            positions[i * 3 + 1] = (y * scale) - 5; // Shift down slightly
-            positions[i * 3 + 2] = z * scale;
-
-            // Color Logic: Metallic/White/Blue
-            // Normalizing z component for color variation
-            const colorVar = (z + 1) / 2;
-            colors[i * 3] = 0.7 + (colorVar * 0.3);     // R
-            colors[i * 3 + 1] = 0.8 + (colorVar * 0.2); // G
-            colors[i * 3 + 2] = 1.0;                    // B
-        }
-
-        geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-        geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-
-        const material = new THREE.PointsMaterial({
-            size: 0.18, // Bigger points
-            vertexColors: true,
-            transparent: true,
-            opacity: 0.8,
-            sizeAttenuation: true,
-            blending: THREE.AdditiveBlending // Makes overlapping points glow
-        });
-
-        const particles = new THREE.Points(geometry, material);
-        scene.add(particles);
-
-        // Animation
-        let time = 0;
-        function animate() {
-            requestAnimationFrame(animate);
-
-            // Rotate object
-            particles.rotation.y += 0.002;
-            particles.rotation.z += 0.001;
-
-            // Subtle camera float
-            camera.position.x = Math.sin(time * 0.0005) * 5;
-            camera.lookAt(0, 0, 0);
-
-            time++;
-            renderer.render(scene, camera);
-        }
-
-        animate();
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
