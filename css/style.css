@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700;900&family=Lexend+Mega:wght@900&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+    /* Vibrant Neo-Brutalist Palette */
+    --bg-color: #fff4cb;
+    /* Creamy Yellow tint */
+    --text-color: #050505;
+
+    /* Accents */
+    --accent-red: #FF6B6B;
+    --accent-blue: #4ECDC4;
+    --accent-yellow: #FFE66D;
+    --accent-purple: #9D4EDD;
+    --accent-orange: #FF9F1C;
+    --accent-green: #90F090;
+    /* Added Green for status */
+
+    --border-color: #000000;
+    --shadow-color: #000000;
+    --card-bg: #ffffff;
+
+    /* Sizes */
+    --border-width: 3px;
+    --shadow-offset: 5px;
+    --hard-shadow: 5px 5px 0px 0px var(--shadow-color);
+    --hard-shadow-hover: 8px 8px 0px 0px var(--shadow-color);
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --card-bg: #2d2d2d;
+    --border-color: #ffffff;
+    --shadow-color: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    /* Grids & Dots */
+    background-image:
+        linear-gradient(var(--border-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-blend-mode: overlay;
+    background-attachment: fixed;
+    /* Opacity for background grid to not overpower */
+}
+
+/* Make grid lines subtle */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    opacity: 0.94;
+    z-index: -1;
+}
+
+/* Scroll Snap Container */
+main {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    position: relative;
+    z-index: 10;
+}
+
+/* Sections */
+section {
+    min-height: 100vh;
+    width: 100%;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem 2rem 2rem;
+    /* Top padding for breathing room */
+    position: relative;
+    overflow: hidden;
+    border-bottom: var(--border-width) solid var(--border-color);
+}
+
+/* --- COMPONENTS --- */
+
+/* Brutalist Card */
+.brutalist-card {
+    background-color: var(--card-bg);
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: var(--hard-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 1rem;
+}
+
+.brutalist-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--hard-shadow-hover);
+}
+
+.card-header {
+    border-bottom: var(--border-width) solid var(--border-color);
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--accent-blue);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+/* Window Buttons */
+.window-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.win-btn {
+    width: 12px;
+    height: 12px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    background: white;
+}
+
+.win-btn.close {
+    background: var(--accent-red);
+}
+
+.win-btn.min {
+    background: var(--accent-yellow);
+}
+
+/* Typography */
+h1 {
+    font-family: 'Lexend Mega', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 0.9;
+    text-transform: uppercase;
+    color: var(--text-color);
+    text-shadow: 4px 4px 0px var(--accent-blue);
+}
+
+h2 {
+    font-family: 'Lexend Mega', sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+}
+
+.mono {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Bento Grid System */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.col-span-12 {
+    grid-column: span 12;
+}
+
+.col-span-8 {
+    grid-column: span 12;
+}
+
+.col-span-6 {
+    grid-column: span 12;
+}
+
+.col-span-4 {
+    grid-column: span 12;
+}
+
+@media (min-width: 768px) {
+    .col-span-8 {
+        grid-column: span 8;
+    }
+
+    .col-span-6 {
+        grid-column: span 6;
+    }
+
+    .col-span-4 {
+        grid-column: span 4;
+    }
+}
+
+/* Terminal Component */
+.terminal-window {
+    background: #000;
+    color: #33ff00;
+    font-family: 'JetBrains Mono', monospace;
+    padding: 1rem;
+    border: var(--border-width) solid var(--border-color);
+    font-size: 0.9rem;
+    box-shadow: var(--hard-shadow);
+}
+
+.terminal-line::before {
+    content: "> ";
+    color: white;
+}
+
+/* Stat Bar */
+.stat-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.stat-label {
+    font-weight: bold;
+    width: 100px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.progress-container {
+    flex-grow: 1;
+    height: 16px;
+    border: 2px solid var(--text-color);
+    background: #fff;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--accent-green);
+}
+
+/* Tags */
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tag {
+    background: #fff;
+    border: 2px solid #000;
+    padding: 0.25rem 0.5rem;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 0 #000;
+    color: #000;
+}
+
+.tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0 #000;
+}
+
+/* Stickers */
+.sticker {
+    position: absolute;
+    z-index: 5;
+    pointer-events: none;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-10deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(-5deg);
+    }
+}
+
+/* Marquee */
+.marquee-container {
+    width: 100%;
+    background: var(--accent-purple);
+    border-y: var(--border-width) solid var(--border-color);
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    bottom: 10%;
+    z-index: 1;
+    padding: 0.5rem 0;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+    font-family: 'Lexend Mega', sans-serif;
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: #fff;
+    text-shadow: 2px 2px 0 #000;
+    padding-right: 2rem;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Utility */
+.highlight {
+    background: var(--accent-yellow);
+    padding: 0 0.2rem;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+/* List Styles */
+ul.brutalist-list {
+    list-style: square inside;
+}
+
+ul.brutalist-list li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Theme Toggle */
+#theme-toggle {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 100;
+    width: 44px;
+    height: 44px;
+    background: var(--card-bg);
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: 4px 4px 0 var(--shadow-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
