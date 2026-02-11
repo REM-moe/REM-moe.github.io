@@ -24,6 +24,9 @@
     --shadow-offset: 5px;
     --hard-shadow: 5px 5px 0px 0px var(--shadow-color);
     --hard-shadow-hover: 8px 8px 0px 0px var(--shadow-color);
+
+    --dot-color: #d1d5db;
+    /* Light grey dots for light mode */
 }
 
 [data-theme="dark"] {
@@ -32,6 +35,15 @@
     --card-bg: #2d2d2d;
     --border-color: #ffffff;
     --shadow-color: #ffffff;
+    --dot-color: #4b5563;
+    /* Dark grey dots for dark mode */
+}
+
+/* Polka Dot Background */
+.polka-dot-bg {
+    background-color: var(--bg-color);
+    background-image: radial-gradient(var(--dot-color) 2px, transparent 2px);
+    background-size: 20px 20px;
 }
 
 * {
@@ -328,9 +340,41 @@ h2 {
     }
 
     100% {
-        transform: translateX(-50%);
+        transform: translateX(-100%);
     }
 }
+
+/* Seamless Marquee */
+.seamless-marquee {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+}
+
+.marquee-track {
+    flex-shrink: 0;
+    display: flex;
+    gap: 0;
+    counter-reset: item;
+    justify-content: space-around;
+    min-width: 100%;
+    animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Note: For -50% trick, we usually put everything in one wrapper and move it. 
+   But simpler: Two identical track elements moving -100% is standard.
+*/
+
 
 /* Utility */
 .highlight {
