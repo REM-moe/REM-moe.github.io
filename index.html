@@ -16,67 +16,74 @@
 
     <main>
         <!-- HERO SECTION -->
-        <section id="hero">
-            <div class="sticker" style="top:10%; right:10%; font-size:4rem; color:var(--accent-red);"><i
-                    class="fas fa-asterisk"></i></div>
+        <section id="hero" class="hero-section">
+            <!-- Floating geometric decorations -->
+            <div class="hero-geo hero-geo-1" aria-hidden="true"></div>
+            <div class="hero-geo hero-geo-2" aria-hidden="true"></div>
+            <div class="hero-geo hero-geo-3" aria-hidden="true"></div>
+            <div class="hero-geo hero-geo-4" aria-hidden="true"></div>
 
-            <div class="bento-grid">
-
-                <!-- Main Intro Card -->
-                <div class="col-span-12 md:col-span-8 brutalist-card"
-                    style="background: var(--accent-yellow); color: #000;">
-                    <div class="card-header" style="background: white; color: #000;">
-                        <span class="font-bold mono uppercase">USER: ABHAY_KV</span>
-                        <div class="window-actions">
-                            <div class="win-btn min"></div>
-                            <div class="win-btn close"></div>
-                        </div>
+            <div class="hero-layout">
+                <!-- Left: Big name & role -->
+                <div class="hero-intro">
+                    <div class="hero-tagline">
+                        <span class="hero-tag-badge" style="background: var(--accent-red);">AVAILABLE FOR HIRE</span>
+                        <span class="hero-tag-badge" style="background: var(--accent-blue);">INDIA</span>
                     </div>
-                    <div class="card-content flex flex-col justify-center h-full">
-                        <h1 class="mb-4 glitch-text" data-text="ABHAY K V">ABHAY K V</h1>
-                        <h2
-                            class="text-xl md:text-3xl font-bold bg-black text-white inline-block p-2 transform -rotate-1 md:w-max max-w-[90vw] break-words">
-                            FULL STACK FLUTTER ENGINEER</h2>
+                    <h1 class="hero-name glitch-text" data-text="ABHAY K V">ABHAY K V</h1>
+                    <div class="hero-role-wrapper">
+                        <h2 class="hero-role">FULL STACK FLUTTER ENGINEER</h2>
+                    </div>
+                    <p class="hero-bio mono">
+                        > Integrating <span>IoT, AI & Real-time
+                            systems</span>.
+                        Led migration of 9 legacy apps serving 2000+ users. Specialized in ESP32 embedded systems &
+                        enterprise architecture.
+                    </p>
+                    <div class="hero-cta-row">
+                        <a href="mailto:abhaykv111@gmail.com" class="brutalist-btn hero-cta-primary">CONTACT ME</a>
+                        <a href="assets/ABHAY_RESUME_JAN_2026.pdf" target="_blank"
+                            class="brutalist-btn hero-cta-secondary">DOWNLOAD CV</a>
                     </div>
                 </div>
 
-                <!-- Stats / Info Card -->
-                <div class="col-span-12 md:col-span-4 brutalist-card"
-                    style="background: var(--accent-blue); color: #000;">
-                    <div class="card-header" style="background: white; color: #000;">
-                        <span class="font-bold mono">STATUS_CHECK</span>
-                    </div>
-                    <div class="card-content font-bold mono text-sm">
-                        <div class="flex justify-between border-b-2 border-black mb-2"><span>LOC:</span>
-                            <span>INDIA</span>
+                <!-- Right: Status card stack -->
+                <div class="hero-cards">
+                    <!-- Status Card -->
+                    <div class="brutalist-card hero-status-card" style="background: var(--accent-blue); color: #000;">
+                        <div class="card-header" style="background: white; color: #000;">
+                            <span class="font-bold mono">STATUS_CHECK</span>
+                            <div class="window-actions">
+                                <div class="win-btn min"></div>
+                                <div class="win-btn close"></div>
+                            </div>
                         </div>
-                        <div class="flex justify-between border-b-2 border-black mb-2"><span>EXP:</span> <span>2
-                                YEARS</span></div>
-                        <div class="flex justify-between border-b-2 border-black mb-2"><span>STACK:</span>
-                            <span>FLUTTER, IOT</span>
+                        <div class="card-content font-bold mono text-sm">
+                            <div class="flex justify-between border-b-2 border-black mb-2"><span>LOC:</span>
+                                <span>INDIA</span>
+                            </div>
+                            <div class="flex justify-between border-b-2 border-black mb-2"><span>EXP:</span> <span>2
+                                    YEARS</span></div>
+                            <div class="flex justify-between border-b-2 border-black mb-2"><span>STACK:</span>
+                                <span>FLUTTER, IOT</span>
+                            </div>
+                            <div class="flex justify-between mb-2"><span>AVAIL:</span> <span
+                                    class="bg-green-400 px-1 border border-black">OPEN</span></div>
                         </div>
-                        <div class="flex justify-between mb-2"><span>AVAIL:</span> <span
-                                class="bg-green-400 px-1 border border-black">OPEN</span></div>
                     </div>
-                </div>
 
-                <!-- Terminal Bio -->
-                <div class="col-span-12 terminal-window">
-                    <div class="terminal-line">init_portfolio.sh</div>
-                    <div class="terminal-line">loading_modules... [OK]</div>
-                    <div class="terminal-line text-white mt-2">
-                        Summary: Full Stack Flutter Engineer integrating <span class="text-yellow-400">IoT, AI, and
-                            Real-time systems</span>.
-                        Led migration of 9 legacy apps serving 2000+ users.
-                        Specialized in ESP32 embedded systems & enterprise architecture.
-                    </div>
-                    <div class="terminal-line mt-2 text-blue-400">git commit -m "Delivering quality solutions with grit"
+                    <!-- Terminal Bio (compact) -->
+                    <div class="terminal-window hero-terminal">
+                        <div class="terminal-line">init_portfolio.sh</div>
+                        <div class="terminal-line">loading_modules... <span style="color:#90F090;">[OK]</span></div>
+                        <div class="terminal-line mt-2 text-blue-400">git commit -m "Delivering quality solutions with
+                            grit"</div>
                     </div>
                 </div>
             </div>
 
             <!-- Marquee -->
-            <div class="marquee-container" style="bottom: 5%;">
+            <div class="marquee-container" style="bottom: 0;">
                 <div class="marquee-content">
                     FLUTTER • GETX • BLOC • SUPABASE • POSTGRESQL • PYTHON • ESP32 • ARDUINO • CI/CD • SHOREBIRD •
                     MIXPANEL • SENTRY •
@@ -87,7 +94,7 @@
         </section>
 
         <!-- EXPERIENCE SECTION -->
-        <section id="experience" style="background: var(--accent-blue);">
+        <section id="experience" class="bg-pattern-crosshatch" style="background: #2a3a4a;">
             <div class="sticker"
                 style="bottom:15%; left:5%; font-size:5rem; color:var(--accent-yellow); transform: rotate(15deg);"><i
                     class="fas fa-folder-open"></i></div>
@@ -97,7 +104,8 @@
             <div class="bento-grid timeline-container">
 
                 <!-- Job 1 -->
-                <div class="col-span-12 md:col-span-6 brutalist-card" style="color: #000; background: #fff;">
+                <div class="col-span-12 md:col-span-6 brutalist-card elevated-card"
+                    style="color: #000; background: #fff;">
                     <div class="card-header" style="background: var(--accent-red); color: #fff;">
                         <span class="font-bold text-white">CENTRIM LIFE (ECARET)</span>
                         <div class="window-actions">
@@ -124,7 +132,8 @@
                 </div>
 
                 <!-- Job 2 -->
-                <div class="col-span-12 md:col-span-6 brutalist-card" style="color: #000; background: #fff;">
+                <div class="col-span-12 md:col-span-6 brutalist-card elevated-card"
+                    style="color: #000; background: #fff;">
                     <div class="card-header" style="background: var(--accent-orange); color: #000;">
                         <span class="font-bold text-black">DESIGN WITH PANDA</span>
                         <div class="window-actions">
@@ -152,7 +161,7 @@
                 </div>
 
                 <!-- Job 3 (Internship) -->
-                <div class="col-span-12 brutalist-card" style="background: #eee; color: #000;">
+                <div class="col-span-12 brutalist-card elevated-card" style="background: #f5f0e1; color: #000;">
                     <div class="card-content flex flex-col md:flex-row justify-between items-center py-4">
                         <div class="text-center md:text-left">
                             <h3 class="font-bold">TRENDING ISLAND</h3>
@@ -172,7 +181,7 @@
                 </div>
 
                 <!-- KYLA -->
-                <div class="col-span-12 md:col-span-6 brutalist-card"
+                <div class="col-span-12 md:col-span-6 brutalist-card elevated-card"
                     style="background: var(--accent-yellow); color: #000;">
                     <div class="card-header" style="background: #000; color: #fff;">
                         <span class="font-bold mono">VOLUNTEER: KYLA</span>
@@ -187,7 +196,7 @@
                 </div>
 
                 <!-- IEEE -->
-                <div class="col-span-12 md:col-span-6 brutalist-card"
+                <div class="col-span-12 md:col-span-6 brutalist-card elevated-card"
                     style="background: var(--accent-blue); color: #000;">
                     <div class="card-header" style="background: #000; color: #fff;">
                         <span class="font-bold mono">MEMBER: IEEE</span>
@@ -205,7 +214,7 @@
         </section>
 
         <!-- PACKAGES SECTION -->
-        <section id="packages" style="background: var(--accent-purple);">
+        <section id="packages" class="bg-pattern-confetti" style="background: #2d1b4e;">
             <div class="sticker"
                 style="top:5%; right:5%; font-size:4rem; color:var(--accent-green); transform: rotate(20deg);"><i
                     class="fas fa-box-open"></i></div>
@@ -215,7 +224,7 @@
             <div class="bento-grid">
 
                 <!-- Scaledrone -->
-                <div class="col-span-12 md:col-span-6 brutalist-card relative"
+                <div class="col-span-12 md:col-span-6 brutalist-card elevated-card relative"
                     style="background: var(--accent-orange); transform: rotate(-1deg); color: #000;">
                     <div class="card-header" style="background: white;">
                         <span class="font-bold mono">PKG: SCALEDRONE_DART</span>
@@ -246,7 +255,7 @@
                 </div>
 
                 <!-- Glowing Avatar -->
-                <div class="col-span-12 md:col-span-6 brutalist-card relative"
+                <div class="col-span-12 md:col-span-6 brutalist-card elevated-card relative"
                     style="background: #fff; transform: rotate(1deg); color: #000;">
                     <div class="card-header" style="background: var(--accent-blue); color: #000;">
                         <span class="font-bold mono">PKG: GLOWING_AVATAR</span>
@@ -283,7 +292,7 @@
                 </div>
 
                 <!-- WATR -->
-                <div class="col-span-12 md:col-span-4 brutalist-card"
+                <div class="col-span-12 md:col-span-4 brutalist-card elevated-card"
                     style="background: var(--accent-yellow); color: #000;">
                     <div class="card-header" style="background: #000; color: #fff;">
                         <span class="font-bold mono">IOT: WATR</span>
@@ -299,7 +308,7 @@
                 </div>
 
                 <!-- NUTRISCAN -->
-                <div class="col-span-12 md:col-span-4 brutalist-card"
+                <div class="col-span-12 md:col-span-4 brutalist-card elevated-card"
                     style="background: var(--accent-green); color: #000;">
                     <div class="card-header" style="background: #000; color: #fff;">
                         <span class="font-bold mono">AI: NUTRISCAN</span>
@@ -314,7 +323,8 @@
                 </div>
 
                 <!-- LUNATRACK -->
-                <div class="col-span-12 md:col-span-4 brutalist-card" style="background: #fff; color: #000;">
+                <div class="col-span-12 md:col-span-4 brutalist-card elevated-card"
+                    style="background: #fff; color: #000;">
                     <div class="card-header" style="background: var(--accent-blue); color: #000;">
                         <span class="font-bold mono">APP: LUNATRACK</span>
                     </div>
@@ -333,8 +343,8 @@
             </div>
         </section>
 
-        <!-- SYSTEMS LAB (New) -->
-        <section id="systems-lab" class="scanlines" style="background: #000; color: #fff;">
+        <!-- SYSTEMS LAB -->
+        <section id="systems-lab" class="scanlines bg-pattern-circuit" style="background: #0d1117; color: #fff;">
             <div class="sticker" style="bottom:10%; right:10%; font-size:3rem; color:var(--accent-green);"><i
                     class="fas fa-terminal"></i></div>
 
@@ -344,7 +354,7 @@
             <div class="bento-grid">
 
                 <!-- go_LUT -->
-                <div class="col-span-12 md:col-span-4 brutalist-card"
+                <div class="col-span-12 md:col-span-4 brutalist-card elevated-card"
                     style="background: #1a1a1a; border-color: #fff; color: #fff;">
                     <div class="card-header" style="background: var(--accent-yellow); color: #000;">
                         <span class="font-bold mono">CLI: GO_LUT</span>
@@ -362,7 +372,7 @@
                 </div>
 
                 <!-- zig-viz -->
-                <div class="col-span-12 md:col-span-4 brutalist-card"
+                <div class="col-span-12 md:col-span-4 brutalist-card elevated-card"
                     style="background: #1a1a1a; border-color: #fff; color: #fff;">
                     <div class="card-header" style="background: var(--accent-purple); color: #fff;">
                         <span class="font-bold mono">EXP: ZIG-VIZ</span>
@@ -380,7 +390,7 @@
                 </div>
 
                 <!-- go_port_scan -->
-                <div class="col-span-12 md:col-span-4 brutalist-card"
+                <div class="col-span-12 md:col-span-4 brutalist-card elevated-card"
                     style="background: #1a1a1a; border-color: #fff; color: #fff;">
                     <div class="card-header" style="background: var(--accent-red); color: #fff;">
                         <span class="font-bold mono">NET: PORT_SCAN</span>
@@ -397,8 +407,8 @@
                     </div>
                 </div>
 
-                <!-- LINKEDIN LOGS (New) -->
-                <div class="col-span-12 brutalist-card" style="background: #000; border: 2px solid #0f0;">
+                <!-- LINKEDIN LOGS -->
+                <div class="col-span-12 brutalist-card elevated-card" style="background: #000; border: 2px solid #0f0;">
                     <div class="card-header" style="background: #0f0; color: #000;">
                         <span class="font-bold mono">NETWORK_TRAFFIC // LINKEDIN_LOGS</span>
                     </div>
@@ -442,25 +452,25 @@
 
 
         <!-- EDUCATION & CONTACT -->
-        <section id="education" class="polka-dot-bg" style="border-top: 5px dashed var(--border-color);">
+        <section id="education" class="polka-dot-bg bg-pattern-zigzag"
+            style="border-top: 5px dashed var(--border-color);">
             <div
                 class="col-span-12 w-full mb-8 overflow-hidden bg-black text-white p-2 transform rotate-1 border-y-2 border-white">
                 <div class="seamless-marquee text-xs font-mono font-bold uppercase">
                     <div class="marquee-track flex gap-4 pr-4">
-                        <span>System Shutdown Sequence Initiated /// deploy_to_production() /// contact_admin()
-                            ///</span>
-                        <span>System Shutdown Sequence Initiated /// deploy_to_production() /// contact_admin()
-                            ///</span>
-                        <span>System Shutdown Sequence Initiated /// deploy_to_production() /// contact_admin()
-                            ///</span>
+                        <span>Hiii i love travelling.... Ummm I like coffee.... then then I like golang.....</span>
+                        <span>Flutter is cool.... like i once went to the international conference in bangalore....
+                            it was fun....</span>
+                        <span>I am a big fan of arts and science oh oh and movies....</span>
+                        <span> Did you know i became lead just after college ( They trusted my skills )</span>
                     </div>
                     <div class="marquee-track flex gap-4 pr-4">
-                        <span>System Shutdown Sequence Initiated /// deploy_to_production() /// contact_admin()
-                            ///</span>
-                        <span>System Shutdown Sequence Initiated /// deploy_to_production() /// contact_admin()
-                            ///</span>
-                        <span>System Shutdown Sequence Initiated /// deploy_to_production() /// contact_admin()
-                            ///</span>
+                        <span>Hiii i love travelling.... Ummm I like coffee.... then then I like golang.....</span>
+                        <span>Flutter is cool.... like i once went to the international conference in bangalore....
+                            it was fun....</span>
+                        <span>I am a big fan of art and science oh oh and movies....</span>
+                        <span> Did you know i became lead just after college ( They trusted my skills )</span>
+
                     </div>
                 </div>
             </div>
@@ -498,20 +508,52 @@
                     </div>
                 </div>
 
-                <!-- Contact Footer -->
-                <div class="col-span-12 brutalist-card text-center py-12" style="background: #000; color: white;">
-                    <h2 class="text-white text-5xl md:text-7xl font-black mb-8 leading-tight">READY TO<br>DEPLOY?</h2>
-                    <a href="mailto:abhaykv111@gmail.com" class="brutalist-btn text-xl px-8 py-4"
-                        style="background: var(--accent-yellow); color: #000;">INITIATE CONTACT</a>
-                    <div class="flex justify-center gap-6 text-3xl mt-6">
-                        <a href="https://linkedin.com/in/abhay-k-v/" class="hover:text-yellow-400"><i
-                                class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/REM-moe" class="hover:text-yellow-400"><i
-                                class="fab fa-github"></i></a>
-                        <a href="assets/ABHAY_RESUME_JAN_2026.pdf" class="hover:text-yellow-400"><i
-                                class="fas fa-file-pdf"></i></a>
+                <!-- Contact CTA -->
+                <div class="col-span-12 contact-cta relative">
+                    <!-- Geometric Decorations -->
+                    <div class="geo-circle geo-circle-1"></div>
+                    <div class="geo-circle geo-circle-2"></div>
+                    <div class="geo-circle geo-circle-3"></div>
+                    <div class="geo-square geo-square-1"></div>
+                    <div class="geo-square geo-square-2"></div>
+
+                    <div class="relative" style="z-index: 1;">
+                        <h2 class="text-5xl md:text-7xl font-black mb-2 leading-tight">READY TO<br>DEPLOY?</h2>
+                        <p class="mono text-sm mb-6" style="color: #333;">// Let's build something extraordinary
+                            together</p>
+                        <a href="mailto:abhaykv111@gmail.com" class="brutalist-btn">INITIATE_CONTACT()</a>
                     </div>
-                    <p class="mono text-xs text-gray-500 mt-6">SYSTEM VERSION 2.0.26 • ABHAY K V</p>
+                </div>
+
+                <!-- Social Links Grid -->
+                <div class="col-span-12">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <a href="https://linkedin.com/in/abhay-k-v/" target="_blank"
+                            class="social-brutalist-btn linkedin">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/REM-moe" target="_blank" class="social-brutalist-btn github">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="mailto:abhaykv111@gmail.com" class="social-brutalist-btn email">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email</span>
+                        </a>
+                        <a href="assets/ABHAY_RESUME_JAN_2026.pdf" target="_blank" class="social-brutalist-btn resume">
+                            <i class="fas fa-file-pdf"></i>
+                            <span>Resume</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="col-span-12">
+                    <div class="footer-strip mb-4"></div>
+                    <div class="text-center">
+                        <span class="version-badge">vibe coded with love • ABHAY K V</span>
+                    </div>
                 </div>
 
             </div>
