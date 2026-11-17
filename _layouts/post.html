@@ -2,11 +2,11 @@
 layout: blog
 ---
 <article class="post">
-  <a class="back" href="{{ '/blog/' | relative_url }}">← Abhay</a>
+  <a class="back" href="{{ '/' | relative_url }}">← Abhay</a>
   <header>
     <p class="meta">{{ page.date | date: "%-d %b %Y" | upcase }}</p>
     <h1{% if page.title_lang %} lang="{{ page.title_lang }}"{% endif %}>{{ page.title }}</h1>
-    {% if page.tags.size > 0 %}<p class="tags">{% for t in page.tags %}<a href="{{ '/blog/tags/' | relative_url }}#{{ t | slugify }}">#{{ t }}</a>{% endfor %}</p>{% endif %}
+    {% if page.tags.size > 0 %}<p class="tags">{% for t in page.tags %}<a href="{{ '/tags/' | relative_url }}#{{ t | slugify }}">#{{ t }}</a>{% endfor %}</p>{% endif %}
   </header>
   {% if page.audio %}
   <div class="player">
@@ -22,7 +22,7 @@ layout: blog
   <div class="body">
 {{ content }}
   </div>
-  <footer><a class="back" href="{{ '/blog/' | relative_url }}">← All posts</a></footer>
+  <footer><a class="back" href="{{ '/' | relative_url }}">← All posts</a></footer>
 </article>
 {% if page.audio %}
 <script>

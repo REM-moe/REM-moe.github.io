@@ -1,8 +1,7 @@
-# Blog settings. The portfolio (index.html at the root) is left exactly as it is;
-# everything the blog adds lives under /blog/.
+# The blog is the home page. The older portfolio lives at /portfolio/.
 title: Abhay
 description: A notebook of experiences, things I learned, and things I still can't answer.
-permalink: /blog/:title/
+permalink: /:title/
 markdown: kramdown
 exclude: [README.md, Gemfile, Gemfile.lock, vendor]
 defaults:
