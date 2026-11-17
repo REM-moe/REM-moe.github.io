@@ -1,0 +1,43 @@
+---
+layout: blog
+---
+<article class="post">
+  <a class="back" href="{{ '/blog/' | relative_url }}">← Abhay</a>
+  <header>
+    <p class="meta">{{ page.date | date: "%-d %b %Y" | upcase }}</p>
+    <h1{% if page.title_lang %} lang="{{ page.title_lang }}"{% endif %}>{{ page.title }}</h1>
+    {% if page.tags.size > 0 %}<p class="tags">{% for t in page.tags %}<a href="{{ '/blog/tags/' | relative_url }}#{{ t | slugify }}">#{{ t }}</a>{% endfor %}</p>{% endif %}
+  </header>
+  {% if page.audio %}
+  <div class="player">
+    <audio src="{{ page.audio | relative_url }}" preload="metadata"></audio>
+    <button type="button" aria-label="Play"><i>▶</i></button>
+    <div class="pl-main">
+      <span class="pl-label">Listen · read by Abhay</span>
+      <input type="range" min="0" max="1000" value="0" aria-label="Seek">
+    </div>
+    <span class="pl-time">0:00</span>
+  </div>
+  {% endif %}
+  <div class="body">
+{{ content }}
+  </div>
+  <footer><a class="back" href="{{ '/blog/' | relative_url }}">← All posts</a></footer>
+</article>
+{% if page.audio %}
+<script>
+(() => {
+  const box = document.querySelector('.player'), a = box.querySelector('audio'), btn = box.querySelector('button'),
+        icon = btn.querySelector('i'), bar = box.querySelector('input'), time = box.querySelector('.pl-time');
+  const fmt = s => isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '0:00';
+  const paint = () => { const d = a.duration || 0, p = d ? a.currentTime / d : 0;
+    bar.value = p * 1000; bar.style.setProperty('--p', p * 100 + '%');
+    time.textContent = a.paused && !a.currentTime ? fmt(d) : fmt(a.currentTime) + ' / ' + fmt(d); };
+  btn.onclick = () => a.paused ? a.play() : a.pause();
+  a.onplay = a.onpause = () => { icon.textContent = a.paused ? '▶' : '❚❚'; btn.setAttribute('aria-label', a.paused ? 'Play' : 'Pause'); };
+  a.ontimeupdate = a.onloadedmetadata = a.onended = paint;
+  a.onerror = () => { box.hidden = true; };   // recording not uploaded yet: hide the player
+  bar.oninput = () => { if (a.duration) a.currentTime = bar.value / 1000 * a.duration; paint(); };
+})();
+</script>
+{% endif %}

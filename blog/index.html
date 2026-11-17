@@ -1,0 +1,24 @@
+---
+layout: blog
+hill: true
+---
+<section class="hero">
+  <canvas id="hill"></canvas>
+  <div class="copy">
+    <h1><span>Hi,</span>I am Abhay.</h1>
+    <p>{{ site.description }}</p>
+    <a class="cta" href="#posts"><i>→</i>Start reading</a>
+  </div>
+</section>
+<section class="list" id="posts">
+  <h2>Posts</h2>
+  {% for post in site.posts %}
+  <a class="row" href="{{ post.url | relative_url }}">
+    <small>{{ post.date | date: "%b %Y" | upcase }}</small>
+    <span{% if post.title_lang %} lang="{{ post.title_lang }}"{% endif %}>{{ post.title }}</span>
+    <small>{% for t in post.tags %}#{{ t }} {% endfor %}</small>
+  </a>
+  {% endfor %}
+  {% if site.posts.size == 0 %}<p class="empty">Nothing here yet. First post soon.</p>{% endif %}
+  <p class="more"><a href="{{ '/blog/tags/' | relative_url }}">Browse by tag →</a></p>
+</section>

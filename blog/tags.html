@@ -1,0 +1,20 @@
+---
+layout: blog
+title: Tags
+permalink: /blog/tags/
+---
+<section class="list tags-page">
+  <a class="back" href="{{ '/blog/' | relative_url }}">← Abhay</a>
+  {% assign tags = site.tags | sort %}
+  {% for tag in tags %}
+  <h2 id="{{ tag[0] | slugify }}">#{{ tag[0] }}</h2>
+  {% for post in tag[1] %}
+  <a class="row" href="{{ post.url | relative_url }}">
+    <small>{{ post.date | date: "%b %Y" | upcase }}</small>
+    <span{% if post.title_lang %} lang="{{ post.title_lang }}"{% endif %}>{{ post.title }}</span>
+    <small></small>
+  </a>
+  {% endfor %}
+  {% endfor %}
+  {% if tags.size == 0 %}<p class="empty">No tags yet.</p>{% endif %}
+</section>
