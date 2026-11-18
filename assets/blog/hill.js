@@ -17,7 +17,7 @@ function fit(renderer, camera, canvas){
 
 function hill(){
   const canvas = document.getElementById('hill');
-  const BG = new THREE.Color('#e7e7e4');
+  const BG = new THREE.Color('#ffffff');
   const renderer = new THREE.WebGLRenderer({canvas, antialias:true});
   renderer.setPixelRatio(Math.min(devicePixelRatio, 1.5));
   let onscreen = true;   // don't render while the hero is scrolled away or the tab is hidden

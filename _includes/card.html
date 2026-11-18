@@ -1,0 +1,10 @@
+{% assign p = include.post %}
+<a class="card" href="{{ p.url | relative_url }}" style="--c:{{ p.color | default: '#151515' }}">
+  <div class="card-text">
+    {% if p.tags.size > 0 %}<p class="eyebrow">{{ p.tags | join: " · " }}</p>{% endif %}
+    <h3>{{ p.title }}</h3>
+    <p class="card-sum">{{ p.content | strip_html | normalize_whitespace | truncate: 150 }}</p>
+    <small>{{ p.date | date: "%-d %b %Y" | upcase }}</small>
+  </div>
+  {% if p.image %}<div class="thumb"><img src="{{ p.image | relative_url }}" alt="" loading="lazy" style="object-position:50% {{ p.focus | default: 0.5 | times: 100 }}%"></div>{% endif %}
+</a>

@@ -11,14 +11,10 @@ hill: true
   </div>
 </section>
 <section class="list" id="posts">
-  <h2>Posts</h2>
-  {% for post in site.posts %}
-  <a class="row" href="{{ post.url | relative_url }}">
-    <small>{{ post.date | date: "%b %Y" | upcase }}</small>
-    <span>{{ post.title }}</span>
-    <small>{% for t in post.tags %}#{{ t }} {% endfor %}</small>
-  </a>
-  {% endfor %}
+  <div class="list-head">
+    <h2>Posts</h2>
+    <p class="pills">{% assign tags = site.tags | sort %}{% for tag in tags %}<a class="pill" href="{{ '/tags/' | relative_url }}#{{ tag[0] | slugify }}">{{ tag[0] }}</a>{% endfor %}</p>
+  </div>
+  <div class="cards">{% for post in site.posts %}{% include card.html post=post %}{% endfor %}</div>
   {% if site.posts.size == 0 %}<p class="empty">Nothing here yet. First post soon.</p>{% endif %}
-  <p class="more"><a href="{{ '/tags/' | relative_url }}">Browse by tag →</a></p>
 </section>

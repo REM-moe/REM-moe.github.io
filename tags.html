@@ -5,16 +5,12 @@ permalink: /tags/
 ---
 <section class="list tags-page">
   <a class="back" href="{{ '/' | relative_url }}">← Abhay</a>
+  <h1>Tags</h1>
   {% assign tags = site.tags | sort %}
+  <p class="pills">{% for tag in tags %}<a class="pill" href="#{{ tag[0] | slugify }}">{{ tag[0] }} <i>{{ tag[1].size }}</i></a>{% endfor %}</p>
   {% for tag in tags %}
-  <h2 id="{{ tag[0] | slugify }}">#{{ tag[0] }}</h2>
-  {% for post in tag[1] %}
-  <a class="row" href="{{ post.url | relative_url }}">
-    <small>{{ post.date | date: "%b %Y" | upcase }}</small>
-    <span>{{ post.title }}</span>
-    <small></small>
-  </a>
-  {% endfor %}
+  <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
+  <div class="cards">{% for post in tag[1] %}{% include card.html post=post %}{% endfor %}</div>
   {% endfor %}
   {% if tags.size == 0 %}<p class="empty">No tags yet.</p>{% endif %}
 </section>

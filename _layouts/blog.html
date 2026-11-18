@@ -8,17 +8,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@400;500&family=DM+Mono:wght@400;500&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ '/assets/blog/blog.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/blog/blog.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 {% if page.hill %}
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
 <script type="module" src="{{ '/assets/blog/hill.js' | relative_url }}"></script>
 {% endif %}
 </head>
-<body>
+<body{% if page.color %} style="--c:{{ page.color }}"{% endif %}>
 {{ content }}
 <script>
 // Malayalam text gets its own typeface and spacing, wherever it appears.
-for (const el of document.querySelectorAll('h1, h2, blockquote, .row span'))
+for (const el of document.querySelectorAll('h1, h2, h3, blockquote'))
   if (/[\u0D00-\u0D7F]/.test(el.textContent)) el.lang = 'ml';
 </script>
 </body>

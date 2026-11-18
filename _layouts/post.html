@@ -1,13 +1,28 @@
 ---
 layout: blog
 ---
+{% capture pills %}{% if page.tags.size > 0 %}<p class="pills">{% for t in page.tags %}<a class="pill" href="{{ '/tags/' | relative_url }}#{{ t | slugify }}">{{ t }}</a>{% endfor %}</p>{% endif %}{% endcapture %}
+{% if page.image %}
+<header class="cover" data-img="{{ page.image | relative_url }}" data-color="{{ page.color }}" data-fy="{{ page.focus | default: 0.5 }}">
+  <canvas></canvas>
+  <div class="cover-top"><a href="{{ '/' | relative_url }}">← Abhay</a><span>{{ page.date | date: "%-d %b %Y" | upcase }}</span></div>
+  <div class="cover-foot">
+    <h1>{{ page.title }}</h1>
+    {{ pills }}
+    {% if page.credit %}<small>Photograph: {{ page.credit }}</small>{% endif %}
+  </div>
+</header>
+<script type="module" src="{{ '/assets/blog/cover.js' | relative_url }}"></script>
+{% endif %}
 <article class="post">
+  {% unless page.image %}
   <a class="back" href="{{ '/' | relative_url }}">← Abhay</a>
   <header>
     <p class="meta">{{ page.date | date: "%-d %b %Y" | upcase }}</p>
     <h1>{{ page.title }}</h1>
-    {% if page.tags.size > 0 %}<p class="tags">{% for t in page.tags %}<a href="{{ '/tags/' | relative_url }}#{{ t | slugify }}">#{{ t }}</a>{% endfor %}</p>{% endif %}
+    {{ pills }}
   </header>
+  {% endunless %}
   {% if page.audio %}
   <div class="player">
     <audio src="{{ page.audio | relative_url }}" preload="metadata"></audio>
