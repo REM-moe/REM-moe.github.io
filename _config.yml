@@ -1,6 +1,6 @@
 # The blog is the home page. The older portfolio lives at /portfolio/.
 title: Abhay
-description: A notebook of experiences, things I learned, and things I still can't answer.
+description: I write stuff here.
 permalink: /:title/
 markdown: kramdown
 # The editor writes one line per paragraph, so a single line break must count (see _layouts/post.html).
