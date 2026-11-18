@@ -15,7 +15,7 @@ hill: true
   {% for post in site.posts %}
   <a class="row" href="{{ post.url | relative_url }}">
     <small>{{ post.date | date: "%b %Y" | upcase }}</small>
-    <span{% if post.title_lang %} lang="{{ post.title_lang }}"{% endif %}>{{ post.title }}</span>
+    <span>{{ post.title }}</span>
     <small>{% for t in post.tags %}#{{ t }} {% endfor %}</small>
   </a>
   {% endfor %}

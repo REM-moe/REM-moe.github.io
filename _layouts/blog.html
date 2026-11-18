@@ -16,5 +16,10 @@
 </head>
 <body>
 {{ content }}
+<script>
+// Malayalam text gets its own typeface and spacing, wherever it appears.
+for (const el of document.querySelectorAll('h1, h2, blockquote, .row span'))
+  if (/[\u0D00-\u0D7F]/.test(el.textContent)) el.lang = 'ml';
+</script>
 </body>
 </html>

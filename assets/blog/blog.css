@@ -42,6 +42,7 @@ small,.meta,.tags,.back,.more{font:400 12px 'DM Mono',monospace;color:var(--mute
 .body img{display:block;width:100%;height:auto;border-radius:14px;margin:2em 0 .6em}
 .body img+em{display:block;font:400 12px 'DM Mono',monospace;color:var(--mute);font-style:normal}
 .body blockquote{border-left:3px solid var(--ink);padding-left:20px;color:#555;font-size:22px;line-height:1.45}
+.body blockquote p+p{margin-top:.6em}
 .body ul,.body ol{padding-left:1.2em}
 .body li+li{margin-top:.4em}
 .body code{font:400 .85em 'DM Mono',monospace;background:#dcdcd8;padding:2px 6px;border-radius:5px}
